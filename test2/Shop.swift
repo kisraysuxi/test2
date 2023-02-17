@@ -1,5 +1,3 @@
-import Foundation
-
 //Создать класс Товар, добавить переменные имя и цена. Добавить класс Магазин с параметром name и 2 функциями: добавление товара в корзину и выдача чека. Функция выдача чека должна выводить информацию в нижеследующем виде. В main создать объекты и вызвать нужные функции.
 //——Имя Магазина——
 //Товары:
@@ -11,18 +9,28 @@ import Foundation
 //Итого к оплате: общая сумма в сомах
 //————————————
 //Спасибо за покупку!
+import Foundation
 
-var product1 = Shop(name: "Milk", price: 53)
-var product2 = Shop(name: "Cheese", price: 45)
-var product3 = Shop(name: "Juice", price: 20)
-product1.addProduct()
-product2.addProduct()
-product3.addProduct()
-
-
-
-
-
-
+class Shop {
+    var name: String
+    var price: Int = 0
+    
+    init(name: String, price: Int) {
+        self.name = name
+        self.price = price
+    }
+    
+        func addProduct() {
+            print("Введите товар: ")
+            let product = readLine()!
+            print("---Globus--- \n Товары: \n Наименование:       Цена:   ")
+            print("\(product)             \(price)")
+            var totalSum = 0
+            totalSum += price
+            print("Итог к оплате: \(totalSum)")
+            print("---------")
+            print("Cпасибо за покупку!")
+        }
+    }
 
 
